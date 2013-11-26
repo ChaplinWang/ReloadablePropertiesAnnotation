@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.morgan.design</groupId>
 	<artifactId>ReloadablePropertiesAnnotation</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2-spring300-SNAPSHOT</version>
 
 	<properties>
 		<spring.version>3.0.0.RELEASE</spring.version>

@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.BeanInitializationException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
 
@@ -18,12 +18,12 @@ import com.morgan.design.properties.internal.PropertiesWatcher.EventPublisher;
 import com.morgan.design.properties.resolver.PropertyResolver;
 
 /**
- * Specialisation of {@link PropertySourcesPlaceholderConfigurer} that can react to changes in the resources specified. The watching process does not start by
+ * Specialisation of {@link PropertyPlaceholderConfigurer} that can react to changes in the resources specified. The watching process does not start by
  * default, initiation is triggered by calling <code>ReadablePropertySourcesPlaceholderConfigurer.startWatching()</code>
  * 
  * @author James Morgan
  */
-public class ReadablePropertySourcesPlaceholderConfigurer extends PropertySourcesPlaceholderConfigurer implements EventPublisher {
+public class ReadablePropertySourcesPlaceholderConfigurer extends PropertyPlaceholderConfigurer implements EventPublisher {
 
 	protected static Logger log = LoggerFactory.getLogger(ReadablePropertySourcesPlaceholderConfigurer.class);
 

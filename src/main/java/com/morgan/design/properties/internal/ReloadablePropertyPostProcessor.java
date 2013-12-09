@@ -92,9 +92,11 @@ public class ReloadablePropertyPostProcessor extends InstantiationAwareBeanPostP
 	 */
 	@Subscribe
 	public void handlePropertyChange(final PropertyModifiedEvent event) {
-		for (final BeanPropertyHolder bean : this.beanPropertySubscriptions.get(event.getPropertyName())) {
-			updateField(bean, event);
-		}
+        if (this.beanPropertySubscriptions.get(event.getPropertyName()) != null) {
+            for (final BeanPropertyHolder bean : this.beanPropertySubscriptions.get(event.getPropertyName())) {
+                updateField(bean, event);
+		    }
+        }
 	}
 
 	public void updateField(final BeanPropertyHolder holder, final PropertyModifiedEvent event) {

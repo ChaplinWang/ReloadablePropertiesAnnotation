@@ -51,8 +51,12 @@ public class ReadablePropertySourcesPlaceholderConfigurer extends PropertyPlaceh
 		this.locations = locations;
 	}
 
+    protected void waitUntilItIsSafe() {
+    }
+
 	@Override
 	public void onResourceChanged(final Resource resource) {
+        waitUntilItIsSafe();
 		try {
 			final Properties reloadedProperties = PropertiesLoaderUtils.loadProperties(resource);
 			for (final String property : this.properties.stringPropertyNames()) {
